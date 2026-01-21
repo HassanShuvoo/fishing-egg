@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2e003e;
+    /* Dark deep purple for outside */
+    font-family: 'Fredoka One', cursive;
+    overflow: hidden;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 800px;
+    /* Increased max width for PC feel */
+    height: 100vh;
+    max-height: 600px;
+    /* Adjusted height */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 4px solid #fff;
+    border-radius: 12px;
+    background: #000;
+    /* Fallback */
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+    /* Make it slightly darker so game elements pop */
+}
+
+.sky {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+    /* Above video */
+}
+
+.bird {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    width: 50px;
+    /* Fixed width for image */
+    height: 40px;
+    /* Fixed height for image */
+    z-index: 10;
+    object-fit: cover;
+    /* or contain */
+    border-radius: 50%;
+    /* Optional: make it round if it's a square image */
+    /* Transition for smooth rotation */
+    transition: transform 0.1s;
+}
+
+.pipe {
+    position: absolute;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    /* Behind UI, same level as bird really */
+}
+
+/* We will use text-shadow or repetition for the pipe look, 
+   or just stack emojis in JS. 
+   Here we style the container of the emoji stack */
+.pipe-segment {
+    font-size: 40px;
+    line-height: 40px;
+}
+
+.score-board {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    z-index: 20;
+    pointer-events: none;
+}
+
+#score {
+    font-size: 60px;
+    color: white;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.start-screen,
+.game-over-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(46, 0, 62, 0.8);
+    /* Dark purple overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+    color: white;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 0 #8e44ad;
+    color: #f1c40f;
+    /* Gold contrasts well with purple */
+}
+
+button {
+    font-family: inherit;
+    font-size: 24px;
+    padding: 10px 30px;
+    background-color: #f1c40f;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #c0392b;
+    transition: transform 0.1s;
+    color: #2e003e;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #c0392b;
+}
+
+/* Floor styling if we had one, but we'll stick to full screen pipes for now or add a floor later */
