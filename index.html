@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fishing Egg</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-container" id="game-container">
+        <!-- Background Video -->
+        <video autoplay muted loop id="bg-video">
+            <source src="Assast/vecteezy_cartoon-background-underwater-sea-life_3439678.mp4" type="video/mp4">
+        </video>
+
+        <div class="sky">
+            <div class="score-board">
+                <span id="score">0</span>
+            </div>
+            <div class="start-screen" id="start-screen">
+                <h1>Fishing Egg</h1>
+                <p>Click or Press Space to Swim</p>
+                <button id="start-btn">Start Game</button>
+            </div>
+            <div class="game-over-screen hidden" id="game-over-screen">
+                <h1>Game Over</h1>
+                <p>Score: <span id="final-score">0</span></p>
+                <button id="restart-btn">Try Again</button>
+            </div>
+            <!-- Bird/Fish Element -->
+            <img src="Assast/fish.png" id="bird" class="bird" alt="Fish Character">
+            <!-- Pipes will be generated here -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
